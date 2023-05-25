@@ -75,6 +75,9 @@ class StudentsController extends BaseController
     }
     public function delete_Students($id)
     {
+        $deleteStud = new StudentsModel();
+        $deleteStud->delete($id); 
         
+        return redirect()->to('/students')->with('success','Successfully Deleted');
     }
 }
