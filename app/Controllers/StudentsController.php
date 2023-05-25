@@ -8,7 +8,10 @@ class StudentsController extends BaseController
 {
     public function index()
     {
-        return view('students/list');
+        $fetchStudents = new StudentsModel();
+        $data['students'] = $fetchStudents->findAll();
+
+        return view('students/list', $data);
     }
     public function create_Students()
     {
