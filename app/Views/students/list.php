@@ -2,15 +2,11 @@
     $this->extend('layout/main');
     $this->section('body');
 ?>
-<?php if(session()->getFlashdata('success')) :?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-       <?= session()->getFlashdata('success') ?>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <?php endif; ?>
 
-<h1>List of Students</h1>
-<a href="/students/add" class="btn btn-primary">Add Students</a>
+
+<h1><i class="fa-solid fa-user">List of Students</i></h1>
+<br>
+<a href="/students/add" class="btn btn-primary"><i class="fa-light fa-plus">Add Students</i></a>
 <table class="table">
   <thead>
     <tr>
@@ -35,15 +31,19 @@
       <td><?= $stud['student_level']; ?></td>
       <td><img src="/Uploads/<?= $stud['student_profile']; ?>"alt="" width="100"></td>
       <td>
-            <a href=""></a>
-            <a href="/students/edit/<?= $stud['id']; ?>" class="btn btn-primary">Edit</a>
-            <a href="/students/delete/<?= $stud['id']; ?>" class="btn btn-danger">delete</a>
+            <a href="/students/edit/<?= $stud['id']; ?>" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></a>
+            <a href="/students/delete/<?= $stud['id']; ?>" class="btn btn-danger"><i class="fa-duotone fa fa-trash"></i></a>
       </td>
     </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
-
+<?php if(session()->getFlashdata('success')) :?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+       <?= session()->getFlashdata('success') ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 
 
 <?php $this->endSection() ?>

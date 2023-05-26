@@ -2,7 +2,8 @@
     $this->extend('layout/main');
     $this->section('body');
 ?>
-<h1>Add Students!</h1>
+<h1><i class="fa-solid fa-user">Add Students!</i></h1>
+<br>
 <form action="/students/list" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="studentName" class="form-label">Student Name</label>
@@ -29,7 +30,7 @@
         <input type="file" class="form-control" name="studentProfile">
     </div>
     <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary"><i class="fa-light fa-plus">Submit</i></button>
     </div>
 </form>
 

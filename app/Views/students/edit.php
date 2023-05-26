@@ -2,7 +2,8 @@
     $this->extend('layout/main');
     $this->section('body');
 ?>
-<h1>Edit Students!</h1>
+<h1><i class="fa-solid fa-user">Update Students!</i></h1>
+<br>
 <form action="/students/update/<?= $student['id']; ?>" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="studentName" class="form-label">Student Name</label>
